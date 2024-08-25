@@ -41,6 +41,7 @@ func _on_create_pressed():
 		$"TimeUntil".text = "Timer at\n"+str(int(hour)).pad_zeros(2) + ":" + str(int(minute)).pad_zeros(2) + ":" + str(int(second)).pad_zeros(2)
 		$"Create".text = "Stop timer"
 	else:
+		
 		timer_duration = 0
 		$"Timer".stop()
 		$"TimeUntil".hide()

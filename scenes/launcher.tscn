@@ -170,7 +170,7 @@ grow_vertical = 2
 text = "Credits:
 
 Code: Qwatrum
-Uicons by Flaticons
+Uicons by Flaticon
 Soundeffect by Pixabay
 ~ Created 2024 ~"
 label_settings = SubResource("LabelSettings_lf7gn")

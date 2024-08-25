@@ -24,6 +24,7 @@ func _on_transparency_pressed():
 
 
 func _on_git_hub_pressed():
+	
 	OS.shell_open("https://github.com")
 
 
@@ -38,6 +39,7 @@ func _on_exit_pressed():
 
 
 func _on_ai_pressed():
+	
 	OS.shell_open("https://chatgpt.com")
 
 
