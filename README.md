@@ -1,3 +1,4 @@
+# ![DevAssistBar](notes/title.png)
 ------------
 
 ###### DevAssistBar is a tool helping developers by providing a bar with useful features.
@@ -11,6 +12,7 @@
 3. Move the bar where you want it to be
 
 ### Features:
+![Bar](notes/dab02.png)
 - Return to the launcher
 - Open a notes window to make notes that will stay at the top of your screen
 - Open ChatGPT in your browser
@@ -18,6 +20,9 @@
 - Open GItHub in your browser
 - Hide / show the bars border
 - Set transparency of the bar
+
+![Launcher](notes/dab01.png)
+![Preview](notes/dab03.png)
 
 #### Credits:
 - Code: Qwatrum
