@@ -1,0 +1,27 @@
+extends Window
+
+var bar_opened = false
+
+func _ready():
+	$"Buttons".show()
+	$"CreditsText".hide()
+	$"Back".hide()
+
+
+func _on_close_requested():
+	if bar_opened:
+		queue_free()
+	else:
+		get_tree().quit()
+
+
+func _on_credits_pressed():
+	$"CreditsText".show()
+	$"Back".show()
+	$"Buttons".hide()
+
+
+func _on_back_pressed():
+	$"Buttons".show()
+	$"CreditsText".hide()
+	$"Back".hide()

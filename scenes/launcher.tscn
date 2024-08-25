@@ -1,0 +1,165 @@
+[gd_scene load_steps=11 format=3 uid="uid://diwyfys8o0yd6"]
+
+[ext_resource type="Script" path="res://scenes/launcher.gd" id="1_vuhkd"]
+[ext_resource type="FontFile" uid="uid://dex13tamkyymh" path="res://fonts/Anonymous_Pro/AnonymousPro-Regular.ttf" id="2_y0jl3"]
+[ext_resource type="FontFile" uid="uid://cy57rny8n3ivi" path="res://fonts/Anonymous_Pro/AnonymousPro-Bold.ttf" id="3_eqipy"]
+[ext_resource type="FontFile" uid="uid://clmplic3vi7ax" path="res://fonts/Anonymous_Pro/AnonymousPro-BoldItalic.ttf" id="4_alp3o"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_k704w"]
+font = ExtResource("2_y0jl3")
+font_size = 32
+font_color = Color(0.0627451, 0.588235, 0.282353, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xtlf5"]
+bg_color = Color(0.160784, 0.14902, 0.160784, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.109804, 0.101961, 0.109804, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+expand_margin_left = 7.0
+expand_margin_top = 2.0
+expand_margin_right = 7.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cdrnu"]
+bg_color = Color(0.109804, 0.101961, 0.109804, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.160784, 0.14902, 0.160784, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+expand_margin_left = 7.0
+expand_margin_top = 2.0
+expand_margin_right = 7.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="Theme" id="Theme_pb03j"]
+Button/colors/font_color = Color(0.0627451, 0.588235, 0.282353, 1)
+Button/colors/font_hover_color = Color(0.0745098, 0.670588, 0.32549, 1)
+Button/font_sizes/font_size = 40
+Button/fonts/font = ExtResource("3_eqipy")
+Button/styles/hover = SubResource("StyleBoxFlat_xtlf5")
+Button/styles/normal = SubResource("StyleBoxFlat_cdrnu")
+
+[sub_resource type="LabelSettings" id="LabelSettings_sekur"]
+font = ExtResource("4_alp3o")
+font_color = Color(0.0627451, 0.588235, 0.282353, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_lf7gn"]
+font = ExtResource("3_eqipy")
+font_size = 20
+font_color = Color(0.0627451, 0.588235, 0.282353, 1)
+
+[node name="Launcher" type="Window"]
+title = "DevAssistBar  -  Launcher"
+position = Vector2i(100, 100)
+size = Vector2i(600, 300)
+unresizable = true
+script = ExtResource("1_vuhkd")
+
+[node name="Background" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.0313726, 0.027451, 0.0313726, 1)
+
+[node name="Title" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -195.5
+offset_top = 5.0
+offset_right = 195.5
+offset_bottom = 38.0
+grow_horizontal = 2
+text = "DevAssistBar - Launcher"
+label_settings = SubResource("LabelSettings_k704w")
+
+[node name="Buttons" type="VBoxContainer" parent="."]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.0
+offset_top = -63.0
+offset_right = 80.0
+offset_bottom = 63.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_pb03j")
+theme_override_constants/separation = 32
+
+[node name="Launch" type="Button" parent="Buttons"]
+layout_mode = 2
+text = "Launch"
+
+[node name="Credits" type="Button" parent="Buttons"]
+layout_mode = 2
+text = "Credits"
+
+[node name="SmallCredits" type="Label" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -66.0
+offset_top = -23.0
+offset_right = 66.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Made by Qwatrum"
+label_settings = SubResource("LabelSettings_sekur")
+
+[node name="CreditsText" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -104.0
+offset_top = -80.0
+offset_right = 104.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Credits:
+
+Code: Qwatrum
+Uicons by Flaticons"
+label_settings = SubResource("LabelSettings_lf7gn")
+horizontal_alignment = 1
+
+[node name="Back" type="Button" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -37.0
+offset_top = -70.0
+offset_right = 37.0
+offset_bottom = -31.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = SubResource("Theme_pb03j")
+theme_override_font_sizes/font_size = 32
+text = "Back"
+
+[connection signal="close_requested" from="." to="." method="_on_close_requested"]
+[connection signal="pressed" from="Buttons/Credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
