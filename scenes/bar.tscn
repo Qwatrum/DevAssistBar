@@ -11,7 +11,7 @@
 
 [node name="Bar" type="Window"]
 title = "DevAssistBar"
-position = Vector2i(0, 36)
+initial_position = 1
 size = Vector2i(360, 50)
 unresizable = true
 always_on_top = true
@@ -33,6 +33,7 @@ offset_top = 5.0
 offset_right = 133.0
 offset_bottom = 133.0
 scale = Vector2(0.3, 0.3)
+tooltip_text = "Back to launcher"
 texture_normal = ExtResource("2_7p5gu")
 flip_h = true
 
@@ -42,6 +43,7 @@ offset_top = 5.0
 offset_right = 188.0
 offset_bottom = 133.0
 scale = Vector2(0.3, 0.3)
+tooltip_text = "Open notes window"
 texture_normal = ExtResource("3_fmpqm")
 
 [node name="Ai" type="TextureButton" parent="."]
@@ -50,6 +52,7 @@ offset_top = 5.0
 offset_right = 238.0
 offset_bottom = 133.0
 scale = Vector2(0.3, 0.3)
+tooltip_text = "Open ChatGPT"
 texture_normal = ExtResource("4_x7gmf")
 
 [node name="Clock" type="TextureButton" parent="."]
@@ -58,6 +61,7 @@ offset_top = 5.0
 offset_right = 288.0
 offset_bottom = 133.0
 scale = Vector2(0.3, 0.3)
+tooltip_text = "Open clock with timer"
 texture_normal = ExtResource("5_yv7p7")
 
 [node name="GitHub" type="TextureButton" parent="."]
@@ -66,6 +70,7 @@ offset_top = 5.0
 offset_right = 338.0
 offset_bottom = 133.0
 scale = Vector2(0.3, 0.3)
+tooltip_text = "Open GitHub"
 texture_normal = ExtResource("6_y2pae")
 
 [node name="Border" type="TextureButton" parent="."]
@@ -74,6 +79,7 @@ offset_top = 5.0
 offset_right = 388.0
 offset_bottom = 133.0
 scale = Vector2(0.3, 0.3)
+tooltip_text = "Show / hide window border"
 texture_normal = ExtResource("7_t56fg")
 
 [node name="Transparency" type="TextureButton" parent="."]
@@ -82,6 +88,7 @@ offset_top = 5.0
 offset_right = 438.0
 offset_bottom = 133.0
 scale = Vector2(0.3, 0.3)
+tooltip_text = "Set transparency"
 texture_normal = ExtResource("8_nbpxx")
 
 [connection signal="close_requested" from="." to="." method="_on_close_requested"]

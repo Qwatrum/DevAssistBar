@@ -6,11 +6,12 @@
 [sub_resource type="Theme" id="Theme_dl4fi"]
 TextEdit/colors/background_color = Color(0.0313726, 0.027451, 0.0313726, 1)
 TextEdit/colors/font_color = Color(0.0627451, 0.588235, 0.282353, 1)
+TextEdit/font_sizes/font_size = 20
 TextEdit/fonts/font = ExtResource("1_4bs4a")
 
 [node name="Notes" type="Window"]
 title = "DevAssistBar  -  Notes"
-position = Vector2i(0, 36)
+initial_position = 1
 size = Vector2i(360, 200)
 always_on_top = true
 script = ExtResource("1_dy7x5")

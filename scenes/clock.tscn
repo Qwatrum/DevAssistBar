@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://3lg6wrt3usr7"]
+[gd_scene load_steps=13 format=3 uid="uid://3lg6wrt3usr7"]
 
 [ext_resource type="Script" path="res://scenes/clock.gd" id="1_8hk01"]
 [ext_resource type="FontFile" uid="uid://cy57rny8n3ivi" path="res://fonts/Anonymous_Pro/AnonymousPro-Bold.ttf" id="1_etkaa"]
+[ext_resource type="AudioStream" uid="uid://bu2eud5vm1ei4" path="res://sounds/bleep.mp3" id="3_m8s5n"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_eo577"]
 font = ExtResource("1_etkaa")
@@ -99,7 +100,7 @@ LineEdit/styles/normal = SubResource("StyleBoxFlat_lfup5")
 
 [node name="Clock" type="Window"]
 title = "DevAssistBar  -  Clock"
-position = Vector2i(0, 36)
+initial_position = 1
 size = Vector2i(280, 300)
 unresizable = true
 script = ExtResource("1_8hk01")
@@ -175,5 +176,13 @@ theme = SubResource("Theme_sycf4")
 max_value = 120.0
 suffix = "Minutes"
 
+[node name="Timer" type="Timer" parent="."]
+
+[node name="AlarmSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_m8s5n")
+volume_db = 5.0
+
 [connection signal="close_requested" from="." to="." method="_on_close_requested"]
 [connection signal="pressed" from="Create" to="." method="_on_create_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="finished" from="AlarmSound" to="." method="_on_audio_stream_player_finished"]

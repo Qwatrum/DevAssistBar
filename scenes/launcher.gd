@@ -32,3 +32,13 @@ func _on_launch_pressed():
 	bar_opened = true
 	main.add_bar()
 	queue_free()
+
+
+func _on_my_github_pressed():
+	
+	OS.shell_open("https://github.com/Qwatrum")
+
+
+func _on_this_repo_pressed():
+	
+	OS.shell_open("https://github.com/Qwatrum/DevAssistBar")

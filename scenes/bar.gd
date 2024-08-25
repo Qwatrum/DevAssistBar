@@ -30,7 +30,6 @@ func _on_git_hub_pressed():
 func _on_notes_pressed():
 	var notes_inste = notes.instantiate()
 	add_child(notes_inste)
-	notes_inste.position = Vector2(100,100)
 
 
 func _on_exit_pressed():
@@ -45,4 +44,3 @@ func _on_ai_pressed():
 func _on_clock_pressed():
 	var clock_inste = clock.instantiate()
 	add_child(clock_inste)
-	clock_inste.position = Vector2(100,100)

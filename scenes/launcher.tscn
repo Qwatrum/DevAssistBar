@@ -1,9 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://diwyfys8o0yd6"]
+[gd_scene load_steps=16 format=3 uid="uid://diwyfys8o0yd6"]
 
 [ext_resource type="Script" path="res://scenes/launcher.gd" id="1_vuhkd"]
 [ext_resource type="FontFile" uid="uid://dex13tamkyymh" path="res://fonts/Anonymous_Pro/AnonymousPro-Regular.ttf" id="2_y0jl3"]
 [ext_resource type="FontFile" uid="uid://cy57rny8n3ivi" path="res://fonts/Anonymous_Pro/AnonymousPro-Bold.ttf" id="3_eqipy"]
 [ext_resource type="FontFile" uid="uid://clmplic3vi7ax" path="res://fonts/Anonymous_Pro/AnonymousPro-BoldItalic.ttf" id="4_alp3o"]
+[ext_resource type="Texture2D" uid="uid://bnm4qay7iprga" path="res://assets/github.png" id="5_0w4ah"]
+[ext_resource type="Texture2D" uid="uid://deiljs6gds72l" path="res://assets/diary-bookmark-down.png" id="6_y6av5"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_k704w"]
 font = ExtResource("2_y0jl3")
@@ -82,9 +84,14 @@ font = ExtResource("3_eqipy")
 font_size = 24
 font_color = Color(0.0627451, 0.588235, 0.282353, 1)
 
+[sub_resource type="LabelSettings" id="LabelSettings_i4ba8"]
+font = ExtResource("3_eqipy")
+font_size = 32
+font_color = Color(0.0627451, 0.588235, 0.282353, 1)
+
 [node name="Launcher" type="Window"]
 title = "DevAssistBar  -  Launcher"
-position = Vector2i(63, 36)
+initial_position = 1
 size = Vector2i(600, 300)
 unresizable = true
 script = ExtResource("1_vuhkd")
@@ -161,11 +168,11 @@ offset_bottom = 61.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Credits:
-Code: Qwatrum
-Open source at Qwatrums GitHub
-Uicons by Flaticons
 
-~ 2024 ~"
+Code: Qwatrum
+Uicons by Flaticons
+Soundeffect by Pixabay
+~ Created 2024 ~"
 label_settings = SubResource("LabelSettings_lf7gn")
 horizontal_alignment = 1
 
@@ -185,7 +192,66 @@ theme = SubResource("Theme_pb03j")
 theme_override_font_sizes/font_size = 32
 text = "Back"
 
+[node name="MyGithub" type="TextureButton" parent="."]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 15.0
+offset_top = -105.0
+offset_right = 143.0
+offset_bottom = 23.0
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("5_0w4ah")
+
+[node name="txt" type="Label" parent="MyGithub"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -64.0
+offset_top = 7.0
+offset_right = 89.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "my GitHub"
+label_settings = SubResource("LabelSettings_i4ba8")
+
+[node name="ThisRepo" type="TextureButton" parent="."]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 15.0
+offset_top = 10.0
+offset_right = 143.0
+offset_bottom = 138.0
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("6_y6av5")
+
+[node name="txt" type="Label" parent="ThisRepo"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -72.5
+offset_top = 7.0
+offset_right = 97.5
+offset_bottom = 76.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "repository
+on GitHub"
+label_settings = SubResource("LabelSettings_i4ba8")
+
 [connection signal="close_requested" from="." to="." method="_on_close_requested"]
 [connection signal="pressed" from="Buttons/Launch" to="." method="_on_launch_pressed"]
 [connection signal="pressed" from="Buttons/Credits" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="MyGithub" to="." method="_on_my_github_pressed"]
+[connection signal="pressed" from="ThisRepo" to="." method="_on_this_repo_pressed"]
