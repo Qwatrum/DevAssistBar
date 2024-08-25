@@ -13,12 +13,15 @@ config_version=5
 config/name="DevAssistBar"
 run/main_scene="res://scenes/main.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
+boot_splash/bg_color=Color(0.0313726, 0.027451, 0.0313726, 1)
+boot_splash/image="res://assets/loading.png"
 config/icon="res://icon.svg"
+boot_splash/minimum_display_time=20
 
 [display]
 
-window/size/viewport_width=1
-window/size/viewport_height=1
+window/size/viewport_width=100
+window/size/viewport_height=32
 window/size/resizable=false
 window/size/borderless=true
 window/size/transparent=true

@@ -1,5 +1,6 @@
 extends Window
 
+@onready var main := get_parent()
 var bar_opened = false
 
 func _ready():
@@ -25,3 +26,9 @@ func _on_back_pressed():
 	$"Buttons".show()
 	$"CreditsText".hide()
 	$"Back".hide()
+
+
+func _on_launch_pressed():
+	bar_opened = true
+	main.add_bar()
+	queue_free()
