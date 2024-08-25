@@ -1,12 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://diwyfys8o0yd6"]
+[gd_scene load_steps=12 format=3 uid="uid://3lg6wrt3usr7"]
 
-[ext_resource type="Script" path="res://scenes/launcher.gd" id="1_vuhkd"]
-[ext_resource type="FontFile" uid="uid://dex13tamkyymh" path="res://fonts/Anonymous_Pro/AnonymousPro-Regular.ttf" id="2_y0jl3"]
-[ext_resource type="FontFile" uid="uid://cy57rny8n3ivi" path="res://fonts/Anonymous_Pro/AnonymousPro-Bold.ttf" id="3_eqipy"]
-[ext_resource type="FontFile" uid="uid://clmplic3vi7ax" path="res://fonts/Anonymous_Pro/AnonymousPro-BoldItalic.ttf" id="4_alp3o"]
+[ext_resource type="Script" path="res://scenes/clock.gd" id="1_8hk01"]
+[ext_resource type="FontFile" uid="uid://cy57rny8n3ivi" path="res://fonts/Anonymous_Pro/AnonymousPro-Bold.ttf" id="1_etkaa"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_k704w"]
-font = ExtResource("2_y0jl3")
+[sub_resource type="LabelSettings" id="LabelSettings_eo577"]
+font = ExtResource("1_etkaa")
 font_size = 32
 font_color = Color(0.0627451, 0.588235, 0.282353, 1)
 
@@ -61,33 +59,50 @@ expand_margin_top = 2.0
 expand_margin_right = 7.0
 expand_margin_bottom = 2.0
 
-[sub_resource type="Theme" id="Theme_pb03j"]
+[sub_resource type="Theme" id="Theme_qlom1"]
 Button/colors/font_color = Color(0.0627451, 0.588235, 0.282353, 1)
 Button/colors/font_focus_color = Color(0.0745098, 0.670588, 0.32549, 1)
 Button/colors/font_hover_color = Color(0.0745098, 0.670588, 0.32549, 1)
 Button/colors/font_pressed_color = Color(0.0509804, 0.513726, 0.243137, 1)
 Button/font_sizes/font_size = 40
-Button/fonts/font = ExtResource("3_eqipy")
+Button/fonts/font = ExtResource("1_etkaa")
 Button/styles/focus = SubResource("StyleBoxFlat_jcy5j")
 Button/styles/hover = SubResource("StyleBoxFlat_xtlf5")
 Button/styles/normal = SubResource("StyleBoxFlat_cdrnu")
 Button/styles/pressed = SubResource("StyleBoxFlat_xacnk")
 
-[sub_resource type="LabelSettings" id="LabelSettings_sekur"]
-font = ExtResource("4_alp3o")
+[sub_resource type="LabelSettings" id="LabelSettings_h0fpf"]
+font = ExtResource("1_etkaa")
+font_size = 32
 font_color = Color(0.0627451, 0.588235, 0.282353, 1)
 
-[sub_resource type="LabelSettings" id="LabelSettings_lf7gn"]
-font = ExtResource("3_eqipy")
-font_size = 24
-font_color = Color(0.0627451, 0.588235, 0.282353, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lfup5"]
+bg_color = Color(0.0313726, 0.027451, 0.0313726, 1)
+expand_margin_left = 5.0
 
-[node name="Launcher" type="Window"]
-title = "DevAssistBar  -  Launcher"
-position = Vector2i(63, 36)
-size = Vector2i(600, 300)
+[sub_resource type="Theme" id="Theme_sycf4"]
+Button/colors/font_color = Color(0.0627451, 0.588235, 0.282353, 1)
+Button/colors/font_focus_color = Color(0.0745098, 0.670588, 0.32549, 1)
+Button/colors/font_hover_color = Color(0.0745098, 0.670588, 0.32549, 1)
+Button/colors/font_pressed_color = Color(0.0509804, 0.513726, 0.243137, 1)
+Button/font_sizes/font_size = 40
+Button/fonts/font = ExtResource("1_etkaa")
+Button/styles/focus = SubResource("StyleBoxFlat_jcy5j")
+Button/styles/hover = SubResource("StyleBoxFlat_xtlf5")
+Button/styles/normal = SubResource("StyleBoxFlat_cdrnu")
+Button/styles/pressed = SubResource("StyleBoxFlat_xacnk")
+LineEdit/colors/font_color = Color(0.0627451, 0.588235, 0.282353, 1)
+LineEdit/font_sizes/font_size = 28
+LineEdit/fonts/font = ExtResource("1_etkaa")
+LineEdit/styles/focus = SubResource("StyleBoxFlat_lfup5")
+LineEdit/styles/normal = SubResource("StyleBoxFlat_lfup5")
+
+[node name="Clock" type="Window"]
+title = "DevAssistBar  -  Clock"
+position = Vector2i(0, 36)
+size = Vector2i(280, 300)
 unresizable = true
-script = ExtResource("1_vuhkd")
+script = ExtResource("1_8hk01")
 
 [node name="Background" type="ColorRect" parent="."]
 anchors_preset = 15
@@ -98,94 +113,67 @@ grow_vertical = 2
 mouse_filter = 2
 color = Color(0.0313726, 0.027451, 0.0313726, 1)
 
-[node name="Title" type="Label" parent="."]
+[node name="Time" type="Label" parent="."]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -195.5
-offset_top = 5.0
-offset_right = 195.5
-offset_bottom = 38.0
+offset_left = -68.0
+offset_top = 15.0
+offset_right = 68.0
+offset_bottom = 48.0
 grow_horizontal = 2
-text = "DevAssistBar - Launcher"
-label_settings = SubResource("LabelSettings_k704w")
+text = "00:00:00"
+label_settings = SubResource("LabelSettings_eo577")
 
-[node name="Buttons" type="VBoxContainer" parent="."]
+[node name="Create" type="Button" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -105.0
+offset_top = -50.0
+offset_right = 105.0
+offset_bottom = -11.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = SubResource("Theme_qlom1")
+theme_override_font_sizes/font_size = 32
+text = "Create timer"
+
+[node name="TimeUntil" type="Label" parent="."]
 visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -80.0
-offset_top = -63.0
-offset_right = 80.0
-offset_bottom = 63.0
+offset_left = -68.0
+offset_top = -34.5
+offset_right = 68.0
+offset_bottom = 34.5
 grow_horizontal = 2
 grow_vertical = 2
-theme = SubResource("Theme_pb03j")
-theme_override_constants/separation = 32
+text = "Timer at 
+00:00:00"
+label_settings = SubResource("LabelSettings_h0fpf")
+horizontal_alignment = 1
 
-[node name="Launch" type="Button" parent="Buttons"]
-layout_mode = 2
-text = "Launch"
-
-[node name="Credits" type="Button" parent="Buttons"]
-layout_mode = 2
-text = "Credits"
-
-[node name="SmallCredits" type="Label" parent="."]
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -66.0
-offset_top = -23.0
-offset_right = 66.0
-grow_horizontal = 2
-grow_vertical = 0
-text = "Made by Qwatrum"
-label_settings = SubResource("LabelSettings_sekur")
-
-[node name="CreditsText" type="Label" parent="."]
+[node name="SpinBox" type="SpinBox" parent="."]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -104.0
-offset_top = -80.0
-offset_right = 104.0
-offset_bottom = 61.0
+offset_left = -85.0
+offset_top = -24.0
+offset_right = 85.0
+offset_bottom = 24.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Credits:
-Code: Qwatrum
-Open source at Qwatrums GitHub
-Uicons by Flaticons
-
-~ 2024 ~"
-label_settings = SubResource("LabelSettings_lf7gn")
-horizontal_alignment = 1
-
-[node name="Back" type="Button" parent="."]
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -37.0
-offset_top = -70.0
-offset_right = 37.0
-offset_bottom = -31.0
-grow_horizontal = 2
-grow_vertical = 0
-theme = SubResource("Theme_pb03j")
-theme_override_font_sizes/font_size = 32
-text = "Back"
+theme = SubResource("Theme_sycf4")
+max_value = 120.0
+suffix = "Minutes"
 
 [connection signal="close_requested" from="." to="." method="_on_close_requested"]
-[connection signal="pressed" from="Buttons/Launch" to="." method="_on_launch_pressed"]
-[connection signal="pressed" from="Buttons/Credits" to="." method="_on_credits_pressed"]
-[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Create" to="." method="_on_create_pressed"]

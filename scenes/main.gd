@@ -11,3 +11,7 @@ func _ready():
 func add_bar():
 	var bar_inste = bar.instantiate()
 	add_child(bar_inste)
+
+func show_launcher():
+	var launcher_inste = launcher.instantiate()
+	add_child(launcher_inste)

@@ -1,8 +1,22 @@
-[gd_scene format=3 uid="uid://dx38ba1gdw463"]
+[gd_scene load_steps=9 format=3 uid="uid://dx38ba1gdw463"]
+
+[ext_resource type="Script" path="res://scenes/bar.gd" id="1_i6s8s"]
+[ext_resource type="Texture2D" uid="uid://yivyxa6le5l4" path="res://assets/exit.png" id="2_7p5gu"]
+[ext_resource type="Texture2D" uid="uid://boqtrhjrvinkg" path="res://assets/edit.png" id="3_fmpqm"]
+[ext_resource type="Texture2D" uid="uid://q57b2n4mj2dm" path="res://assets/chatbot-speech-bubble.png" id="4_x7gmf"]
+[ext_resource type="Texture2D" uid="uid://d3wilpya1trty" path="res://assets/clock-five.png" id="5_yv7p7"]
+[ext_resource type="Texture2D" uid="uid://bnm4qay7iprga" path="res://assets/github.png" id="6_y2pae"]
+[ext_resource type="Texture2D" uid="uid://b5ashg0hkts5c" path="res://assets/square-dashed.png" id="7_t56fg"]
+[ext_resource type="Texture2D" uid="uid://vksdv20r70ju" path="res://assets/transparency.png" id="8_nbpxx"]
 
 [node name="Bar" type="Window"]
 title = "DevAssistBar"
-size = Vector2i(200, 50)
+position = Vector2i(0, 36)
+size = Vector2i(360, 50)
+unresizable = true
+always_on_top = true
+transparent = true
+script = ExtResource("1_i6s8s")
 
 [node name="Background" type="ColorRect" parent="."]
 anchors_preset = 15
@@ -12,3 +26,69 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 color = Color(0.0313726, 0.027451, 0.0313726, 1)
+
+[node name="Exit" type="TextureButton" parent="."]
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 133.0
+offset_bottom = 133.0
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("2_7p5gu")
+flip_h = true
+
+[node name="Notes" type="TextureButton" parent="."]
+offset_left = 60.0
+offset_top = 5.0
+offset_right = 188.0
+offset_bottom = 133.0
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("3_fmpqm")
+
+[node name="Ai" type="TextureButton" parent="."]
+offset_left = 110.0
+offset_top = 5.0
+offset_right = 238.0
+offset_bottom = 133.0
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("4_x7gmf")
+
+[node name="Clock" type="TextureButton" parent="."]
+offset_left = 160.0
+offset_top = 5.0
+offset_right = 288.0
+offset_bottom = 133.0
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("5_yv7p7")
+
+[node name="GitHub" type="TextureButton" parent="."]
+offset_left = 210.0
+offset_top = 5.0
+offset_right = 338.0
+offset_bottom = 133.0
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("6_y2pae")
+
+[node name="Border" type="TextureButton" parent="."]
+offset_left = 260.0
+offset_top = 5.0
+offset_right = 388.0
+offset_bottom = 133.0
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("7_t56fg")
+
+[node name="Transparency" type="TextureButton" parent="."]
+offset_left = 310.0
+offset_top = 5.0
+offset_right = 438.0
+offset_bottom = 133.0
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("8_nbpxx")
+
+[connection signal="close_requested" from="." to="." method="_on_close_requested"]
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="Notes" to="." method="_on_notes_pressed"]
+[connection signal="pressed" from="Ai" to="." method="_on_ai_pressed"]
+[connection signal="pressed" from="Clock" to="." method="_on_clock_pressed"]
+[connection signal="pressed" from="GitHub" to="." method="_on_git_hub_pressed"]
+[connection signal="pressed" from="Border" to="." method="_on_border_pressed"]
+[connection signal="pressed" from="Transparency" to="." method="_on_transparency_pressed"]

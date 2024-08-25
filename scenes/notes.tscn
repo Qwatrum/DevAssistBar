@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://c68yxlh5chdcu"]
+
+[ext_resource type="FontFile" uid="uid://cy57rny8n3ivi" path="res://fonts/Anonymous_Pro/AnonymousPro-Bold.ttf" id="1_4bs4a"]
+[ext_resource type="Script" path="res://scenes/notes.gd" id="1_dy7x5"]
+
+[sub_resource type="Theme" id="Theme_dl4fi"]
+TextEdit/colors/background_color = Color(0.0313726, 0.027451, 0.0313726, 1)
+TextEdit/colors/font_color = Color(0.0627451, 0.588235, 0.282353, 1)
+TextEdit/fonts/font = ExtResource("1_4bs4a")
+
+[node name="Notes" type="Window"]
+title = "DevAssistBar  -  Notes"
+position = Vector2i(0, 36)
+size = Vector2i(360, 200)
+always_on_top = true
+script = ExtResource("1_dy7x5")
+
+[node name="TextEdit" type="TextEdit" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_dl4fi")
+placeholder_text = "Your Notes"
+context_menu_enabled = false
+caret_blink = true
+
+[connection signal="close_requested" from="." to="." method="_on_close_requested"]
