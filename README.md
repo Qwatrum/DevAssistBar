@@ -4,7 +4,7 @@
 ###### DevAssistBar is a tool helping developers by providing a bar with useful features.
 
 ------------
-
+### [Get on Itch.io](qwatrum.itch.io/devassistbar "Get on Itch.io")
 
 ### Usage:
 1. Download `DevAssistBar.exe` in `build`
